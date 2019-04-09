@@ -1,26 +1,22 @@
 import React from 'react';
-import { Card, CardBody, CardImg, CardTitle, CardSubtitle, CardText, Button, Container } from "reactstrap";
+import { Card, CardBody, Container } from "reactstrap";
 import styled from "styled-components";
 
 const Counter = styled.p`
-    font-size: 5rem;
+    font-size: 2rem;
 `;
 
-
-
-const Display = (props) => {
+const Display = ({ balls, strikes }) => {
     return (
-        <Container className="display d-flex justify-content-around">
-            <Card>
-                <CardBody>
-                    <Counter>0</Counter>
-                    <CardTitle className="text-center">Strikes</CardTitle>
+        <Container className="display d-flex justify-content-around flex-wrap">
+            <Card className="mt-3">
+                <CardBody className="px-5 pt-0">
+                    <Counter>Strikes: {strikes}</Counter>
                 </CardBody>
             </Card>
-            <Card>
-                <CardBody>
-                    <Counter>0</Counter>
-                    <CardTitle className="text-center">Balls</CardTitle>
+            <Card className="mt-3">
+                <CardBody className="px-5 pt-0">
+                    <Counter>Balls: {balls}</Counter>
                 </CardBody>
             </Card>
         </Container>
